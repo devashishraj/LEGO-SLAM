@@ -1,0 +1,13 @@
+opencv-contrib-python
+open3d
+scipy
+tqdm
+torchmetrics
+plyfile
+numpy<2
+rerun-sdk==0.17.0
+pcl
+git+https://github.com/openai/CLIP.git
+git+https://github.com/zhanghang1989/PyTorch-Encoding/
+timm
+evo
