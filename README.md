@@ -22,15 +22,27 @@
   <div align="center"></div>
 </p>
 
-## LEGO-SLAM Overview
 <p align="center">
-  <a href="">
-    <img src="./media/overview.png" alt="Logo" width="100%">
-  </a>
+  <img src="./media/readme.gif" alt="LEGO-SLAM Demo" width="100%">
 </p>
 <p align="center">
+  Open-vocabulary 3D semantic SLAM on a self-captured outdoor scene with language-embedded Gaussians.
 </p>
+
+<br>
+
+---
+
+## Method Overview
+<p align="center">
+  <img src="./media/overview.png" alt="LEGO-SLAM Overview" width="100%">
+</p>
+
 LEGO-SLAM is a 3DGS-based SLAM framework that supports open-vocabulary semantic querying and rendering. It tracks via G-ICP and efficiently builds a map by embedding Gaussians with scene-adaptive 16D language features. Map management is achieved through Language Pruning and Language-Based Loop Detection. The generated map enables open-vocabulary 3D Object Localization.
+
+<br>
+
+---
 
 ## Environments
 Install requirements
@@ -63,6 +75,10 @@ python setup.py install
 # gtsam
 conda install conda-forge::gtsam
 ```
+
+<br>
+
+---
 
 ## Datasets
 
@@ -201,12 +217,13 @@ Examples:
 ```bash
 # Both TUM and ScanNet
 bash undistort_feature.sh /path/to/TUM /path/to/Scannet
-
-# Only need TUM (ScanNet path defaults to /path/to/Scannet)
-bash undistort_feature.sh /path/to/TUM
 ```
 
 The script applies camera-specific undistortion to each `.pt` feature map in-place using `undistort_feature_img.py`.
+
+<br>
+
+---
 
 ## Running
 
@@ -217,6 +234,10 @@ bash run_scannet.sh /path/to/Scannet
 ```
 
 The output `scene.ply` can be viewed in [SuperSplat](https://superspl.at/editor).
+
+<br>
+
+---
 
 ## Citation
 ```bibtex
