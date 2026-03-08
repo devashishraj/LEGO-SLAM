@@ -124,7 +124,7 @@ $(document).ready(function() {
 
     var options = {
 		slidesToScroll: 1,  // 하나씩 스크롤
-		slidesToShow: 3,    // 한 번에 3개 표시
+		slidesToShow: 2,    // 한 번에 2개 표시
 		loop: true,
 		infinite: true,
 		autoplay: false,    // 수동 조작을 위해 자동재생 끄기

@@ -311,7 +311,7 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
           <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/real_out.mp4" type="video/mp4">
+            <source src="static/videos/outdoor.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
             Real-World Outdoor Scene
@@ -319,7 +319,7 @@
         </div>
         <div class="item">
           <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/real_in.mp4" type="video/mp4">
+            <source src="static/videos/indoor.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
             Real-World Indoor Scene
@@ -327,50 +327,26 @@
         </div>
         <div class="item">
           <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/replica_o0.mp4" type="video/mp4">
+            <source src="static/videos/replica.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            Replica Office0 Scene
+            Replica Scene
           </h2>
         </div>
         <div class="item">
           <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/replica_o1.mp4" type="video/mp4">
+            <source src="static/videos/tum.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            Replica Office1 Scene
+            TUM Scene
           </h2>
         </div>
         <div class="item">
           <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/tum_2.mp4" type="video/mp4">
+            <source src="static/videos/scannet.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-            TUM 2 Scene
-          </h2>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/tum_3.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            TUM 3 Scene
-          </h2>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/scannet_169.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            ScanNet 0169 Scene
-          </h2>
-        </div>
-        <div class="item">
-          <video poster="" controls muted loop preload="metadata">
-            <source src="static/videos/scannet_0000.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            ScanNet 0000 Scene
+            ScanNet Scene
           </h2>
         </div>
       </div>
@@ -401,78 +377,6 @@
 <!-- End paper abstract -->
 
 
-<!-- 3D Relevancy Maps -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">3D Relevancy Maps</h2>
-
-        <div class="comparison-row">
-          <div class="columns is-mobile">
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/bicycle.gif" alt="Our method bicycle query result" loading="lazy">
-              </div>
-            </div>
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/car.gif" alt="LangSplat bicycle query result" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="comparison-row">
-          <div class="columns is-mobile">
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/chair.gif" alt="Our method chair query result" loading="lazy">
-              </div>
-            </div>
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/floor.gif" alt="LangSplat chair query result" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="comparison-row">
-          <div class="columns is-mobile">
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/grass.gif" alt="Our method grass query result" loading="lazy">
-              </div>
-            </div>
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/road.gif" alt="LangSplat grass query result" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="comparison-row">
-          <div class="columns is-mobile">
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/teddy bear.gif" alt="Our method wall query result" loading="lazy">
-              </div>
-            </div>
-            <div class="column">
-              <div class="gif-container">
-                <img src="static/videos/wall.gif" alt="LangSplat wall query result" loading="lazy">
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End 3D Relevancy Maps -->
 
 
 <!-- System Overview Section -->
@@ -496,7 +400,34 @@
 <!-- End System Overview Section -->
 
 
-
+<!-- Quantitative Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="columns is-mobile">
+          <div class="column">
+            <div class="publication-banner">
+              <img src="static/images/ate_fps_comparison.png" alt="ATE vs FPS comparison" loading="lazy">
+            </div>
+          </div>
+          <div class="column">
+            <div class="publication-banner">
+              <img src="static/images/psnr_fps_comparison.png" alt="PSNR vs FPS comparison" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Comparison of tracking accuracy (ATE) and rendering quality (PSNR) against processing speed (FPS) across different SLAM methods. LEGO-SLAM achieves competitive accuracy and quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Quantitative Results -->
 
 
 <!-- BibTex citation -->
