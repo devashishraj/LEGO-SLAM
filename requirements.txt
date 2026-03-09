@@ -2,7 +2,8 @@ opencv-contrib-python
 open3d
 scipy
 tqdm
-torchmetrics
+torchmetrics==0.11.4
+lpips
 plyfile
 numpy<2
 rerun-sdk==0.17.0
