@@ -642,32 +642,35 @@ class Mapper(SLAMParameters):
                 
             
                 target_points, target_rots, target_scales, target_mask, target_kf_idxs  = self.gaussians.get_gaussians_tensor()
-                if self.rerun_viewer:
-                        target_points_vis = target_points[::5]
-            
+
                 self.from_last_loop_closed = self.from_last_loop_closed + 1
-            
+
                 if try_loop_closing and self.enable_loop_closing and self.loop_manager is not None and self.from_last_loop_closed > 3:
                     # get all trackable gaussians
 
                     target_points, target_rots, target_scales, target_mask, target_kf_idxs  = self.gaussians.get_gaussians_tensor()
                     self.loop_manager.input_gs_map(target_points, target_rots, target_scales, target_mask, target_kf_idxs)
-                    
-                    if self.rerun_viewer:
-                        target_points_vis = target_points[::5]
-                    
+
                     # update all_kf_poses (after BA)
-                    
+
                     self.loop_manager.insert_new_kf(newcam.c2w.detach().cpu().numpy(), newcam.original_depth_image, len(self.all_kf_poses)-1, self.all_kf_poses, self.tracking_kf_idxs)
                     self.loop_manager.loop_detection_naive()
-                
+
                     self.loop_manager.calculate_loop_constraints()
-                
+
                     loop_closed = self.loop_manager.pgo_update()
-                
+
                     if loop_closed:
                         self.update_gs_mapper(self.loop_manager.kf_poses_after_pgo)
                         self.from_last_loop_closed = 0
+
+                # Visualize Gaussian map in rerun (after loop closing if it happened)
+                if self.rerun_viewer:
+                    points_vis = self.gaussians.get_xyz[::5].detach().cpu().numpy()
+                    colors_vis = self.gaussians._features_dc[::5, 0, :].detach().cpu().numpy()
+                    colors_vis = np.clip(colors_vis * 0.2821 + 0.5, 0.0, 1.0)
+                    rr.set_time_seconds("log_time", time.time() - self.total_start_time_viewer)
+                    rr.log("pt/gaussian_map", rr.Points3D(points_vis, colors=colors_vis, radii=0.02))
                 
                 # get trackable gaussians of recent n keyframes
                 target_points, target_rots, target_scales, target_kf_idxs, target_edge_mask  = self.gaussians.get_trackable_gaussians_tensor(self.trackable_opacity_th, cut_idx)

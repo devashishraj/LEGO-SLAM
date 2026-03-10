@@ -366,8 +366,8 @@ class Tracker(SLAMParameters):
                     
                     if self.rerun_viewer:
                         rr.set_time_seconds("log_time", time.time() - self.total_start_time)
-                        rr.log(f"pt/trackable/{self.iteration_images}", rr.Points3D(points, colors=colors, radii=0.02))
-                        target_edge_mask_ = target_edge_mask.astype(np.bool_)
+                        # rr.log(f"pt/trackable/{self.iteration_images}", rr.Points3D(points, colors=colors, radii=0.02))
+                        # target_edge_mask_ = target_edge_mask.astype(np.bool_)
                         # rr.log(f"pt/trackable_edge", rr.Points3D(target_points[target_edge_mask_], radii=0.01))
 
                     del target_points, target_rots, target_scales
