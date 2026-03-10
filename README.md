@@ -26,7 +26,7 @@
   <img src="./media/readme.gif" alt="LEGO-SLAM Demo" width="100%">
 </p>
 <p align="center">
-  Open-vocabulary 3D semantic SLAM on a self-captured outdoor scene with language-embedded Gaussians.
+  LEGO-SLAM running at 15 FPS on a ScanNet scene with language-based loop closing for drift correction.
 </p>
 
 <br>
