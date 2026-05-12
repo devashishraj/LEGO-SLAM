@@ -33,6 +33,18 @@
 
 ---
 
+## Open-Vocabulary Querying
+<p align="center">
+  Text-query results on outdoor and indoor scenes captured with a Femto Mega camera and reconstructed by LEGO-SLAM.
+</p>
+<p align="center">
+  <img src="./media/relevancy_maps.jpg" alt="LEGO-SLAM text-query relevancy maps on Femto Mega outdoor and indoor scenes" width="100%">
+</p>
+
+<br>
+
+---
+
 ## Method Overview
 <p align="center">
   <img src="./media/overview.png" alt="LEGO-SLAM Overview" width="100%">
